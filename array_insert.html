@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Insert</title>
+    <script>
+      let array = [20, 30, 50, 80, 90];
+      //   let newElement = 70;
+      //   let position = 2;
+
+      //   for (let i = array.length - 1; i >= 0; i--) {
+      //     if (i >= position) {
+      //       array[i + 1] = array[i];
+      //       if (i == position) {
+      //         array[i] = newElement;
+      //       }
+      //     }
+      //   }
+      //   document.write(array);
+
+      //   OR----------------------
+      const insertEle = () => {
+        let newElement = document.getElementById("newEl").value;
+        let position = document.getElementById("position").value;
+        newElement = parseInt(newElement);
+        console.log(array);
+        for (let i = array.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            array[i + 1] = array[i];
+            if (i == position) {
+              array[i] = newElement;
+            }
+          }
+        }
+        console.log(array);
+        document.getElementById("newEl").value = "";
+        document.getElementById("position").value = "";
+      };
+      //================================================================
+      //Or we can use splice() method for insert the value
+      //   array.splice(1, 2, 900); //(1) insert the index No. (2) To remove total no. of elements (3) add new element
+      //   console.log(array);
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter Position" id="position" />
+    <input type="text" placeholder="Enter New Element" id="newEl" />
+    <button onclick="insertEle()">Insert</button>
+  </body>
+</html>

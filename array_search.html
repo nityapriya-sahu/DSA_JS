@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Array</title>
+    <script>
+      let arr = [10, 20, 30, 40, 80, 50, 60, 90, 70];
+      //   let search = 50;
+      //   let index;
+
+      //   for (let i = 0; i <= arr.length - 1; i++) {
+      //     if (arr[i] == search) {
+      //       index = i;
+      //       break;
+      //     }
+      //   }
+      //   document.write(index);
+      // OR-----------------------------------------
+      //   document.write(arr.indexOf(70));
+      //================================================
+
+      function btnClick() {
+        let number = document.getElementById("search").value;
+        let index;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] == number) {
+            index = i;
+            break;
+          }
+        }
+        document.write(index);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="enter element" id="search" />
+    <button onclick="btnClick()">Get Index</button>
+  </body>
+</html>
